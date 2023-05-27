@@ -18,18 +18,7 @@ function createGalleryMarkup() {
         .join("");
 }
 
-galleryEl.addEventListener("click", onImgClick);
-
-function onImgClick(event) {
-    event.preventDefault();
-
-    if (event.target.nodeName !== "IMG") {
-        return;
-    }
-
-    const lightbox = new SimpleLightbox(".gallery a", {
-        captionsData: "alt",
-        captionDelay: 250,
-    });
-    lightbox.on("show.simplelightbox");
-}
+new SimpleLightbox(".gallery a", {
+    captionsData: "alt",
+    captionDelay: 250,
+});
